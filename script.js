@@ -11,4 +11,15 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// og code
+// generateBtn.addEventListener("click", writePassword);
+// og code
+
+generateBtn.addEventListener('click', function() {
+  confirm("Would you like to include lowercase letters? \n OK or Cancel")
+  if (confirm === true) {
+    console.log("User wants lowercase characters in their password.")
+  } else {
+      console.log("User does NOT want lowercase characters in their password.")}
+  });
+  // continueConfirm("Would you like to include uppercase letters? \n OK or Cancel")
