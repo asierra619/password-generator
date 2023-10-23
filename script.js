@@ -11,7 +11,8 @@ var includeUppercase = false;
 var includeNumbers = false;
 var includeSpecialCharacters = false;
 
-generateBtn.addEventListener('click', function() {
+function generatePassword() {
+  var allCharacters = []
   var passwordLength = prompt("Please choose a number of characters between 8 and 128.");
   passwordLength = parseInt (passwordLength);
 
@@ -45,13 +46,13 @@ generateBtn.addEventListener('click', function() {
       allCharacters = allCharacters.concat(SpecialCharacters[0].split(','));
   }
 
-  let password = ''
+  var password = ''
 
   for (var i = 0; i < allCharacters; i++) {
       password += allCharacters[Math.floor(Math.random() * allCharacters.length)];
   }
   return password;
-});
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -60,8 +61,7 @@ function writePassword() {
   includeNumbers = false
   includeSpecialCharacters = false
 
-   var allCharacters = [];
-   var password = '';
+  var password = '';
   
     
     var password = generatePassword();
