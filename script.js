@@ -22,49 +22,52 @@ generateBtn.addEventListener('click', function() {
   }
 
   includeLowercase = confirm("Would you like to use Lowercase letters?");
-
   includeUppercase = confirm("Would you like to use Uppercase letters?");
-
   includeNumbers = confirm("Would you like to use Numbers?");
-
   includeSpecialCharacters = confirm("Would you like to use Special Characters?");
 
   if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialCharacters) {
     alert ("Please select at least one of the options to create your password.") }
+
+    if (includeLowercase) {
+      allCharacters = allCharacters.concat(Lowercase[0].split(','));
+  }
+
+  if (includeUppercase) {
+      allCharacters = allCharacters.concat(Uppercase[0].split(','));
+  }
+
+  if (includeNumbers) {
+      allCharacters = allCharacters.concat(Numbers[0].split(','));
+  }
+
+  if (includeSpecialCharacters) {
+      allCharacters = allCharacters.concat(SpecialCharacters[0].split(','));
+  }
+
+  let password = ''
+
+  for (var i = 0; i < allCharacters; i++) {
+      password += allCharacters[Math.floor(Math.random() * allCharacters.length)];
+  }
+  return password;
 });
 
 // Write password to the #password input
 function writePassword() {
+  includeLowercase = false
+  includeUppercase = false
+  includeNumbers = false
+  includeSpecialCharacters = false
 
-  var allCharacters = [];
-    var passwordLength = '';
+   var allCharacters = [];
+   var password = '';
   
-    passwordLength.value = password;
     
-    if (includeLowercase) {
-        allCharacters = allCharacters.concat(Lowercase[0].split(','));
-    }
-
-    if (includeUppercase) {
-        allCharacters = allCharacters.concat(Uppercase[0].split(','));
-    }
-
-    if (includeNumbers) {
-        allCharacters = allCharacters.concat(Numbers[0].split(','));
-    }
-
-    if (includeSpecialCharacters) {
-        allCharacters = allCharacters.concat(SpecialCharacters[0].split(','));
-    }
-
-    for (var i = 0; i < passwordLength; i++) {
-        password += allCharacters[Math.floor(Math.random() * allCharacters.length)];
-    }
-
-    return password;
-
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
 
 }
 
