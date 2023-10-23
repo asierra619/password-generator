@@ -31,24 +31,24 @@ function generatePassword() {
     alert ("Please select at least one of the options to create your password.") }
 
     if (includeLowercase) {
-      allCharacters = allCharacters.concat(Lowercase[0].split(','));
+      allCharacters = allCharacters.concat(Lowercase);
   }
 
   if (includeUppercase) {
-      allCharacters = allCharacters.concat(Uppercase[0].split(','));
+      allCharacters = allCharacters.concat(Uppercase);
   }
 
   if (includeNumbers) {
-      allCharacters = allCharacters.concat(Numbers[0].split(','));
+      allCharacters = allCharacters.concat(Numbers);
   }
 
   if (includeSpecialCharacters) {
-      allCharacters = allCharacters.concat(SpecialCharacters[0].split(','));
+      allCharacters = allCharacters.concat(SpecialCharacters);
   }
 
   var password = ''
 
-  for (var i = 0; i < allCharacters; i++) {
+  for (var i = 0; i < passwordLength; i++) {
       password += allCharacters[Math.floor(Math.random() * allCharacters.length)];
   }
   return password;
