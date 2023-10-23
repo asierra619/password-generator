@@ -1,39 +1,70 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var Lowercase = ['a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z'];
-var Uppercase = ['A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'];
-var Numbers = ['1,2,3,4,5,6,7,8,9,0'];
-var SpecialCharacters = ["!,@,#,$,%,^,&,*,(,),_,+,~,`,|,},{,[,],:,;,?,>,<,',',.,/,-,="];
+var Lowercase = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var Uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+var Numbers = '1234567890'.split('');
+var SpecialCharacters = "!@#$%^&*()_+~`|}{[]:;?><,./-=".split('');
+
+var includeLowercase = false;
+var includeUppercase = false;
+var includeNumbers = false;
+var includeSpecialCharacters = false;
 
 generateBtn.addEventListener('click', function() {
   var passwordLength = prompt("Please choose a number of characters between 8 and 128.");
+  passwordLength = parseInt (passwordLength);
 
   if (passwordLength <8 || passwordLength >128) {
-    return "Please pick a number between 8 and 128."
+    alert ("Please pick a number between 8 and 128.")
   } else {
-    return "You have selected " + passwordLength + "characters."
+    alert ("You have selected " + passwordLength + " characters.")
   }
 
   includeLowercase = confirm("Would you like to use Lowercase letters?");
 
   includeUppercase = confirm("Would you like to use Uppercase letters?");
 
-  includeNumber = confirm("Would you like to use Numbers?");
+  includeNumbers = confirm("Would you like to use Numbers?");
 
   includeSpecialCharacters = confirm("Would you like to use Special Characters?");
 
   if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialCharacters) {
-    return "Please select at least one of the options to create your password."
-
-})
+    alert ("Please select at least one of the options to create your password.") }
+});
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  var allCharacters = [];
+    var passwordLength = '';
+  
+    passwordLength.value = password;
+    
+    if (includeLowercase) {
+        allCharacters = allCharacters.concat(Lowercase[0].split(','));
+    }
+
+    if (includeUppercase) {
+        allCharacters = allCharacters.concat(Uppercase[0].split(','));
+    }
+
+    if (includeNumbers) {
+        allCharacters = allCharacters.concat(Numbers[0].split(','));
+    }
+
+    if (includeSpecialCharacters) {
+        allCharacters = allCharacters.concat(SpecialCharacters[0].split(','));
+    }
+
+    for (var i = 0; i < passwordLength; i++) {
+        password += allCharacters[Math.floor(Math.random() * allCharacters.length)];
+    }
+
+    return password;
+
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
 }
 
