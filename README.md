@@ -14,16 +14,18 @@ N/A
 
 Using the link below, a user will click on the "Generate Password" button, enter how many characters they would like to have, and finally continue through the prompts on whether or not they'd like other types of characters in the password (at least one must be selected).
 
-Deployed Website Link-
-https://asierra619.github.io/asierra-portfolio/
+When all prompts have been responded to, a random password will be generated on screen.
 
-![Screenshot of Work in Progress Portfolio](./assets/images/portfolioscreenshot.png)
+Deployed Website Link-
+https://asierra619.github.io/password-generator/
+
+![Screenshot of Work in Progress Portfolio](./assets/images/Screenshot%202023-10-23%20at%206.28.07%20PM.png)
 
 ## Credits
 
 Starter code provided by EdX and the UCSD Extended Learning Coding Bootcamp
 Ask BCS was a huge help in working out the kinks of my project - Thanks to Jerromy, Spider, and Drew!
-I also referenced Emily Morosoff's repo when I originally became stuck on where to begin
+I also referenced Emily Morosoff's repo when I originally became stuck on where to begin.
 Thank you all!
 
 ## License
