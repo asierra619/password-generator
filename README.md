@@ -23,10 +23,7 @@ https://asierra619.github.io/password-generator/
 
 ## Credits
 
-Starter code provided by EdX and the UCSD Extended Learning Coding Bootcamp
-Ask BCS was a huge help in working out the kinks of my project - Thanks to Jerromy, Spider, and Drew!
-I also referenced Emily Morosoff's repo when I originally became stuck on where to begin.
-Thank you all!
+Starter code provided by EdX and the UCSD Extended Learning Coding Bootcamp. <br /> Ask BCS was a huge help in working out the kinks of my project - Thanks to Jerromy, Spider, and Drew! <br /> I also referenced Emily Morosoff's repo when I originally became stuck on where to begin. <br /> Thank you all!
 
 ## License
 
